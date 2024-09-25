@@ -1,16 +1,28 @@
-# interview_demo
+# Amalitech-Interview-Demo
 
-A new Flutter project.
+The **Employee Celebration App** is a mobile application designed to celebrate employees on their **birthday** and **company anniversary**. It provides a user-friendly interface to remind and display celebratory messages or surprises for employees on these special occasions.
 
-## Getting Started
+![App Screenshot](./assets/screen-shot-1.png)
+![App Screenshot](./assets/screen-shot-2.png)
 
-This project is a starting point for a Flutter application.
+## Feature
+- **Birthday Celebration**:Celebrate and displays an employee's birthday on a particular date within the month.
+- **Anniversary Celebration**: celebrates an employee on their work anniversary with a custom message.
 
-A few resources to get you started if this is your first Flutter project:
+## Demo
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![App Demo](./assets/app-demo.webm)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Installation
+
+Follow the instructions below to set up the app in your development environment:
+
+### Prerequisites
+
+- [Flutter](https://flutter.dev/docs/get-started/install) installed
+- IDE (e.g., VS Code, Android Studio)
+
+### Steps
+
+1. **Clone the repository**:
+   git clone https://github.com/your-username/employee-celebration-app.git
