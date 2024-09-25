@@ -4,6 +4,7 @@ The **Employee Celebration App** is a mobile application designed to celebrate e
 
 ![App Screenshot](./assets/screen-shot-1.png)
 ![App Screenshot](./assets/screen-shot-2.png)
+<img src="./assets/screen-shot-2.png" width="200" />
 
 ## Feature
 - **Birthday Celebration**:Celebrate and displays an employee's birthday on a particular date within the month.
