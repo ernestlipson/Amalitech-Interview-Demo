@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import '../models/employee_model.dart';
 import '../utility/utility.dart';
@@ -51,7 +52,11 @@ class _EventsPageState extends State<EventsPage> {
     var months = groupedEvents.keys.toList();
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Events'),
+        title: const Text(
+          'Events',
+          style: TextStyle(fontSize: 15),
+        ),
+        centerTitle: true,
       ),
       body: ListView.builder(
         itemCount: months.length,
@@ -63,37 +68,91 @@ class _EventsPageState extends State<EventsPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  month,
-                  style: Theme.of(context).textTheme.headlineSmall,
-                ),
-              ),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Text(
+                    month,
+                    style: Theme.of(context)
+                        .textTheme
+                        .headlineSmall
+                        ?.copyWith(fontSize: 23, fontWeight: FontWeight.bold),
+                  )),
               ListView.builder(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: events.length,
                 itemBuilder: (context, eventIndex) {
                   Event event = events[eventIndex];
-                  return ListTile(
-                    leading: CircleAvatar(
-                      radius: 24,
-                      backgroundColor: Theme.of(context).colorScheme.error,
-                      child: Text(
-                        event.title[0].toUpperCase(),
-                        style: const TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold),
+                  String formattedDate = formatDateWithSuffix(event.date);
+                  return Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        formattedDate,
+                        style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                            fontSize: 14,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.black54),
                       ),
-                    ),
-                    title: Text(event.title),
-                    subtitle: Text(event.subtitle),
+                      ListTile(
+                        contentPadding:
+                            const EdgeInsets.symmetric(horizontal: 0),
+                        leading: CircleAvatar(
+                          radius: 26,
+                          backgroundColor: Theme.of(context).colorScheme.error,
+                          child: Text(
+                            event.title[0].toUpperCase(),
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                        ),
+                        title: Text(
+                          event.title,
+                          style: const TextStyle(fontSize: 17),
+                        ),
+                        subtitle: Row(children: [
+                          Icon(event.icon, color: Colors.black54),
+                          const SizedBox(width: 18),
+                          Text(event.subtitle,
+                              style: const TextStyle(color: Colors.black54))
+                        ]),
+                      ),
+                      const SizedBox(height: 10)
+                    ],
                   );
                 },
-              ), // Space between months
+              ),
+              const SizedBox(height: 18) // Space between months
             ],
           );
         },
       ),
     );
+  }
+}
+
+String formatDateWithSuffix(DateTime date) {
+  String day = getDayWithSuffix(date.day);
+
+  String formattedDate = DateFormat("MMMM, yyyy").format(date);
+
+  return "$day $formattedDate";
+}
+
+String getDayWithSuffix(int day) {
+  if (day >= 11 && day <= 13) {
+    return "${day}th";
+  }
+
+  switch (day % 10) {
+    case 1:
+      return "${day}st";
+    case 2:
+      return "${day}nd";
+    case 3:
+      return "${day}rd";
+    default:
+      return "${day}th";
   }
 }

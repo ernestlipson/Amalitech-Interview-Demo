@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../models/employee_model.dart';
@@ -6,8 +7,14 @@ class Event {
   final DateTime date;
   final String title;
   final String subtitle;
+  final IconData icon;
 
-  Event({required this.date, required this.title, required this.subtitle});
+  Event({
+    required this.date,
+    required this.title,
+    required this.subtitle,
+    required this.icon,
+  });
 }
 
 class EventUtility {
@@ -21,6 +28,7 @@ class EventUtility {
             employee.dateOfBirth.day),
         title: employee.fullName,
         subtitle: employee.birthdayString,
+        icon: Icons.cake_outlined,
       ));
 
       // Add anniversary event
@@ -29,6 +37,7 @@ class EventUtility {
             employee.yearOfEmployment.day),
         title: employee.fullName,
         subtitle: employee.anniversaryString,
+        icon: Icons.celebration_outlined,
       ));
     }
 
