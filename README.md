@@ -2,20 +2,16 @@
 
 The **Employee Celebration App** is a mobile application designed to celebrate employees on their **birthday** and **company anniversary**. It provides a user-friendly interface to remind and display celebratory messages or surprises for employees on these special occasions.
 
-![App Screenshot](./assets/screenshot1.png)
+![App Screenshot](./assets/screen-shot-1.png)
+![App Screenshot](./assets/screen-shot-2.png)
 
-## Features
-
-- **Birthday Celebration**: Automatically sends a personalized message or displays a notification when an employee's birthday arrives.
-- **Anniversary Celebration**: Notifies and celebrates employees on their work anniversary with custom messages.
-- **User Profiles**: Manage employee profiles with details like name, date of birth, and company start date.
-- **Notifications**: Scheduled reminders and push notifications for birthdays and anniversaries.
-- **Custom Messages**: Administrators can customize the celebration messages.
-- **Media Support**: Allows adding pictures and videos for personalized greetings.
+## Feature
+- **Birthday Celebration**:Celebrate and displays an employee's birthday on a particular date within the month.
+- **Anniversary Celebration**: celebrates an employee on their work anniversary with a custom message.
 
 ## Demo
 
-![App Demo](./assets/demo.webm)
+![App Demo](./assets/app-demo.webm)
 
 ## Installation
 
