@@ -9,7 +9,7 @@ The **Employee Celebration App** is a mobile application designed to celebrate e
 - **Anniversary Celebration**: celebrates an employee on their work anniversary with a custom message.
 
 ## Demo
-
+<img src="./assets/app-demo.gif" width="40" height="300" /> <img src="./assets/app-demo.gif" width="40" height="300" />
 ![App Demo](./assets/app-demo.webm)
 ![App Demo](./assets/app-demo.gif)
 
