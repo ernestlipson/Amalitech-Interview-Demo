@@ -23,4 +23,4 @@ Follow the instructions below to set up the app in your development environment:
 ### Steps
 
 1. **Clone the repository**:
-   git clone https://github.com/your-username/employee-celebration-app.git
+   git clone [https://github.com/ernestlipson/Amalitech-Interview-Demo.git]
