@@ -12,6 +12,7 @@ The **Employee Celebration App** is a mobile application designed to celebrate e
 ## Demo
 
 ![App Demo](./assets/app-demo.webm)
+![App Demo](./assets/app-demo.gif)
 
 ## Installation
 
