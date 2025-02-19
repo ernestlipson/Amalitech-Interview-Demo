@@ -41,10 +41,8 @@ class EventUtility {
       ));
     }
 
-    // Sort events by date
     allEvents.sort((a, b) => a.date.compareTo(b.date));
 
-    // Group events by month
     Map<String, List<Event>> groupedEvents = {};
     for (var event in allEvents) {
       String monthKey = DateFormat('MMMM').format(event.date);
