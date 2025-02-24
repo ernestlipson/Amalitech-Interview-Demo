@@ -2,20 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../models/employee_model.dart';
-
-class Event {
-  final DateTime date;
-  final String title;
-  final String subtitle;
-  final IconData icon;
-
-  Event({
-    required this.date,
-    required this.title,
-    required this.subtitle,
-    required this.icon,
-  });
-}
+import '../models/event.dart';
 
 class EventUtility {
   static Map<String, List<Event>> groupEventsByMonth(List<Employee> employees) {

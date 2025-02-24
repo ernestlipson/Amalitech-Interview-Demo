@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../models/employee_model.dart';
+import '../models/event.dart';
 import '../utility/utility.dart';
 
 class EventsApp extends StatelessWidget {
