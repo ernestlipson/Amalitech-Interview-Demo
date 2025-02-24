@@ -54,15 +54,36 @@ class _EventsPageState extends State<EventsPage> {
       appBar: AppBar(
         title: const Text(
           'Events',
-          style: TextStyle(fontSize: 15),
+          style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
       ),
       body: ListView.builder(
+        physics: const BouncingScrollPhysics(),
         itemCount: months.length,
         itemBuilder: (context, index) {
           String month = groupedEvents.keys.elementAt(index);
           List<Event> events = groupedEvents[month]!;
+
+          Map<String, Color> titleColors = {};
+
+          Color getColorForTitle(String title) {
+            if (!titleColors.containsKey(title)) {
+              final colors = [
+                Colors.red,
+                Colors.green,
+                Colors.blue,
+                Colors.orange,
+                Colors.purple,
+                Colors.brown,
+                Colors.teal,
+                Colors.indigo,
+              ];
+              final colorIndex = title.hashCode % colors.length;
+              titleColors[title] = colors[colorIndex];
+            }
+            return titleColors[title]!;
+          }
 
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -101,10 +122,12 @@ class _EventsPageState extends State<EventsPage> {
                             const EdgeInsets.symmetric(horizontal: 0),
                         leading: CircleAvatar(
                           radius: 26,
-                          backgroundColor: Theme.of(context).colorScheme.error,
+                          backgroundColor: getColorForTitle(event.title),
                           child: Text(
                             event.title[0].toUpperCase(),
-                            style: const TextStyle(color: Colors.white),
+                            style: const TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500),
                           ),
                         ),
                         title: Text(
@@ -128,6 +151,12 @@ class _EventsPageState extends State<EventsPage> {
           );
         },
       ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     // Add your action here
+      //   },
+      //   child: const Icon(Icons.toggle_on_outlined),
+      // ),
     );
   }
 }
