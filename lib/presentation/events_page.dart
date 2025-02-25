@@ -152,12 +152,6 @@ class _EventsPageState extends State<EventsPage> {
           );
         },
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {
-      //     // Add your action here
-      //   },
-      //   child: const Icon(Icons.toggle_on_outlined),
-      // ),
     );
   }
 }
